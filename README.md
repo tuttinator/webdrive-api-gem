@@ -24,7 +24,9 @@ TODO: Write usage instructions here
 
 ## Notes
 
-The Webdrive XML RPC API is painful. The documentation is out of date, and some methods seem not to work.
+XML-RPC is a horrible technology that makes me sad.
+
+The Webdrive XML RPC API is even more painful. The documentation is out of date, and some methods seem cause server-side PHP exceptions.
 
 AFAIK the API doesn't have a method to list the domains already registered by a customer, so you may be responsible yourself for keeping track of which domains are registered.
 

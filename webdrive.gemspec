@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Webdrive::VERSION
   spec.authors       = ["Caleb Tutty"]
   spec.email         = ["caleb@prettymint.co.nz"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Wrapping the XML-RPC Ruby standard library and building an abstraction layer to conveniently interact with the Webdrive.co.nz reseller XML-RPC API.}
+  spec.summary       = %q{Interact with the Webdrive.co.nz reseller XML-RPC API}
   spec.homepage      = ""
   spec.license       = "MIT"
 
