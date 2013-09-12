@@ -20,7 +20,11 @@ module Webdrive
           raise "#{credential} is required" if option[crendential].nil?
           instance_variable_set credential, options[crendential]
         end
-        server = XMLRPC::Client.new_from_hash(host: 'cp.secureserver.co.nz', path: '/remote_cp_server/server.asys', use_ssl: true)
+        @server = XMLRPC::Client.new_from_hash(host: 'cp.secureserver.co.nz', path: '/remote_cp_server/server.asys', use_ssl: true)
+      end
+
+      def call(method)
+        @server.call(@rpc_key, @auth_key, method)
       end
 
     end # Client class
