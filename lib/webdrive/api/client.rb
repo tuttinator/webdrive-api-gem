@@ -23,8 +23,25 @@ module Webdrive
         @server = XMLRPC::Client.new_from_hash(host: 'cp.secureserver.co.nz', path: '/remote_cp_server/server.asys', use_ssl: true)
       end
 
-      def call(method)
-        @server.call(@rpc_key, @auth_key, method)
+      def call(*method)
+        @server.call(@rpc_key, @auth_key, *method)
+      end
+
+      def login(*options)
+        username, password = extract_options(:username, :password, options)
+        call 'login', username, password
+      end
+
+      private
+
+      def extract_options(*keys, values)
+        if values.is_a? Hash
+          keys.map do |option|
+            values[option]
+          end
+        else
+          values
+        end
       end
 
     end # Client class
