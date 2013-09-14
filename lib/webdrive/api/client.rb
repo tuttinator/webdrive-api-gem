@@ -24,7 +24,7 @@ module Webdrive
       end
 
       def call(*method)
-        @server.call(@rpc_key, @auth_key, *method)
+        @server.call(@rpc_key, @auth_key, method)
       end
 
       def login(*options)
@@ -35,6 +35,7 @@ module Webdrive
       private
 
       def extract_options(*keys, values)
+        values = values.last if values.length == 1
         if values.is_a? Hash
           keys.map do |option|
             values[option]
